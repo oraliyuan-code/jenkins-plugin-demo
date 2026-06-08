@@ -32,10 +32,11 @@ mvn clean package
 产物路径：
 
 ```
-target/demo-lifecycle.hpi
+target/demo-lifecycle.hpi          # Maven 构建输出
+releases/demo-lifecycle-1.0-SNAPSHOT.hpi   # 可直接安装的发布包（已纳入仓库）
 ```
 
-在 Jenkins：**系统管理 → 插件管理 → 高级 → 上传插件**，选择上述 `.hpi` 文件。
+在 Jenkins：**系统管理 → 插件管理 → 高级 → 上传插件**，选择 `releases/` 下的 `.hpi` 文件即可。
 
 ### 本地调试（嵌入式 Jenkins）
 

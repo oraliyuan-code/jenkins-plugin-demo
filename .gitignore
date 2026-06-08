@@ -4,6 +4,6 @@ target/
 .classpath
 .project
 .settings/
-*.hpi
-*.jpi
+target/*.hpi
+target/*.jpi
 work/
