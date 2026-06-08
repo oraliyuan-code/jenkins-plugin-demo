@@ -1,0 +1,11 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+  <f:entry title="步骤说明" field="message">
+    <f:textbox default="执行 Pipeline 演示步骤"/>
+  </f:entry>
+  <f:entry>
+    <div class="jenkins-help">
+      Pipeline 步骤在脚本中通过 <code>demoLifecycle('消息')</code> 调用。
+    </div>
+  </f:entry>
+</j:jelly>

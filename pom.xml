@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>6.2138.v03274d462c13</version>
+    <relativePath />
+  </parent>
+
+  <groupId>io.jenkins.plugins</groupId>
+  <artifactId>demo-lifecycle</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>hpi</packaging>
+
+  <name>Demo Lifecycle Plugin</name>
+  <description>演示 Jenkins 插件在各生命周期阶段能做什么</description>
+  <url>https://github.com/oraliyuan-code/jenkins-plugin-demo</url>
+
+  <properties>
+    <jenkins.version>2.479.3</jenkins.version>
+    <hpi.pluginMainClass>io.jenkins.plugins.demo.lifecycle.DemoLifecyclePlugin</hpi.pluginMainClass>
+  </properties>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.jenkins.tools.bom</groupId>
+        <artifactId>bom-2.479.x</artifactId>
+        <version>5054.v620b_5d2b_d5e6</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-step-api</artifactId>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+</project>

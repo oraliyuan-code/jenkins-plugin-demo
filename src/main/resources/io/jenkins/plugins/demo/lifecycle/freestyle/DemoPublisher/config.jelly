@@ -1,0 +1,11 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+  <f:entry title="操作说明" field="message">
+    <f:textbox default="执行演示构建后操作"/>
+  </f:entry>
+  <f:entry>
+    <div class="jenkins-help">
+      Publisher 在构建步骤全部完成后执行，无论构建成功与否（取决于配置）。
+    </div>
+  </f:entry>
+</j:jelly>

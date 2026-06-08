@@ -1,0 +1,11 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+  <f:entry title="步骤说明" field="message">
+    <f:textbox default="执行演示构建步骤"/>
+  </f:entry>
+  <f:entry>
+    <div class="jenkins-help">
+      Builder 是 Freestyle 任务「构建」阶段的可选步骤，会在控制台输出可见日志。
+    </div>
+  </f:entry>
+</j:jelly>

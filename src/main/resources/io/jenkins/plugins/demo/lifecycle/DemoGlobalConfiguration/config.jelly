@@ -1,0 +1,19 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form" xmlns:l="/lib/layout" xmlns:st="jelly:stapler">
+  <f:section title="插件生命周期演示（GlobalConfiguration）">
+    <f:entry title="启用演示功能" field="enabled">
+      <f:checkbox default="true"/>
+    </f:entry>
+    <f:entry title="欢迎语" field="welcomeMessage">
+      <f:textbox default="Jenkins 插件生命周期演示"/>
+    </f:entry>
+    <f:entry>
+      <div class="jenkins-help">
+        <p>
+          此扩展点对应 <strong>GlobalConfiguration</strong>，在 Jenkins 全局层面保存配置。
+          保存后可在「插件生命周期演示」页面看到触发记录。
+        </p>
+      </div>
+    </f:entry>
+  </f:section>
+</j:jelly>

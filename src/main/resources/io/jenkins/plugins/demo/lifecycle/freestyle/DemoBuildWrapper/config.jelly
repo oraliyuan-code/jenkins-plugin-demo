@@ -1,0 +1,11 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+  <f:entry title="准备说明" field="prepareMessage">
+    <f:textbox default="准备构建环境"/>
+  </f:entry>
+  <f:entry>
+    <div class="jenkins-help">
+      BuildWrapper 在构建步骤执行前 setUp、结束后 tearDown，常用于准备/清理环境。
+    </div>
+  </f:entry>
+</j:jelly>
