@@ -33,12 +33,12 @@
         <tbody>
           <j:forEach var="point" items="${it.extensionPoints}">
             <tr>
-              <td><strong>${point.name()}</strong></td>
-              <td>${point.lifecycle()}</td>
-              <td>${point.controls()}</td>
-              <td>${point.whereVisible()}</td>
-              <td><code>${point.demoClass()}</code></td>
-              <td>${it.getTriggerCount(point.name())}</td>
+              <td><strong>${point.name}</strong></td>
+              <td>${point.lifecycle}</td>
+              <td>${point.controls}</td>
+              <td>${point.whereVisible}</td>
+              <td><code>${point.demoClass}</code></td>
+              <td>${it.getTriggerCount(point.name)}</td>
             </tr>
           </j:forEach>
         </tbody>
@@ -71,9 +71,9 @@
               <j:forEach var="event" items="${it.recentEvents}">
                 <tr>
                   <td>${event.formattedTime()}</td>
-                  <td>${event.extensionPoint()}</td>
-                  <td>${event.phase()}</td>
-                  <td>${event.detail()}</td>
+                  <td>${event.extensionPoint}</td>
+                  <td>${event.phase}</td>
+                  <td>${event.detail}</td>
                 </tr>
               </j:forEach>
             </j:otherwise>

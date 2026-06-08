@@ -7,7 +7,7 @@ import jenkins.model.GlobalConfigurationCategory;
 import net.sf.json.JSONObject;
 import org.kohsuke.stapler.DataBoundSetter;
 import org.kohsuke.stapler.QueryParameter;
-import org.kohsuke.stapler.StaplerRequest2;
+import org.kohsuke.stapler.StaplerRequest;
 
 /**
  * 全局配置：在「系统管理 → 系统配置」中可见，控制插件全局行为。
@@ -45,7 +45,7 @@ public class DemoGlobalConfiguration extends GlobalConfiguration {
     }
 
     @Override
-    public boolean configure(StaplerRequest2 req, JSONObject json) {
+    public boolean configure(StaplerRequest req, JSONObject json) {
         req.bindJSON(this, json);
         save();
         DemoEventLog.record(

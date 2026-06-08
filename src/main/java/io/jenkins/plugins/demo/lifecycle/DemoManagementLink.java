@@ -3,6 +3,7 @@ package io.jenkins.plugins.demo.lifecycle;
 import hudson.Extension;
 import hudson.model.ManagementLink;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import jenkins.model.Jenkins;
@@ -71,11 +72,11 @@ public class DemoManagementLink extends ManagementLink {
         for (DemoEventLog.Event event : DemoEventLog.getRecentEvents()) {
             builder.append(event.formattedTime())
                     .append(',')
-                    .append(escapeCsv(event.extensionPoint()))
+                    .append(escapeCsv(event.getExtensionPoint()))
                     .append(',')
-                    .append(escapeCsv(event.phase()))
+                    .append(escapeCsv(event.getPhase()))
                     .append(',')
-                    .append(escapeCsv(event.detail()))
+                    .append(escapeCsv(event.getDetail()))
                     .append('\n');
         }
         return HttpResponses.text(builder.toString());
@@ -91,11 +92,44 @@ public class DemoManagementLink extends ManagementLink {
         return value;
     }
 
-    public record DemoExtensionPointInfo(
-            String name, String lifecycle, String controls, String whereVisible, String demoClass) {
+    public static final class DemoExtensionPointInfo {
+        private final String name;
+        private final String lifecycle;
+        private final String controls;
+        private final String whereVisible;
+        private final String demoClass;
+
+        public DemoExtensionPointInfo(
+                String name, String lifecycle, String controls, String whereVisible, String demoClass) {
+            this.name = name;
+            this.lifecycle = lifecycle;
+            this.controls = controls;
+            this.whereVisible = whereVisible;
+            this.demoClass = demoClass;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getLifecycle() {
+            return lifecycle;
+        }
+
+        public String getControls() {
+            return controls;
+        }
+
+        public String getWhereVisible() {
+            return whereVisible;
+        }
+
+        public String getDemoClass() {
+            return demoClass;
+        }
 
         public static List<DemoExtensionPointInfo> all() {
-            return List.of(
+            return Arrays.asList(
                     new DemoExtensionPointInfo(
                             "Plugin.start/stop",
                             "插件加载/卸载",

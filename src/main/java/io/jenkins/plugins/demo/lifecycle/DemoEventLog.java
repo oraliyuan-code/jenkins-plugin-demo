@@ -57,9 +57,33 @@ public final class DemoEventLog {
         COUNTERS.clear();
     }
 
-    public record Event(Instant time, String extensionPoint, String phase, String detail) {
+    public static final class Event {
+        private final Instant time;
+        private final String extensionPoint;
+        private final String phase;
+        private final String detail;
+
+        public Event(Instant time, String extensionPoint, String phase, String detail) {
+            this.time = time;
+            this.extensionPoint = extensionPoint;
+            this.phase = phase;
+            this.detail = detail;
+        }
+
         public String formattedTime() {
             return FORMATTER.format(time);
+        }
+
+        public String getExtensionPoint() {
+            return extensionPoint;
+        }
+
+        public String getPhase() {
+            return phase;
+        }
+
+        public String getDetail() {
+            return detail;
         }
     }
 }
